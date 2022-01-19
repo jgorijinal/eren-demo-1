@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/jgorijinal/eren-demo-1/issues"
   },
-  "homepage": "https://github.com/jgorijinal/eren-demo-1#readme"
+  "homepage": "https://github.com/jgorijinal/eren-demo-1#readme",
+  "dependencies": {
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
 }
