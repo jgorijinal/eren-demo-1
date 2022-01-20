@@ -1,14 +1,13 @@
 <template>
     <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
-      <svg v-if="icon" class="icon" aria-hidden="true">
-        <use :xlink:href="`#icon-${icon}`"></use>
-      </svg>
+      <g-icon v-if="icon" class="icon" :name="icon" ></g-icon>
       <div class="content">
         <slot/>
       </div>
     </button>
 </template>
 <script>
+
 export default {
   props: {
     icon:String,
@@ -19,7 +18,8 @@ export default {
      return value === 'left' || value === 'right'
       }
     }
-  }
+  },
+
 }
 </script>
 <style lang="scss">
@@ -30,10 +30,10 @@ export default {
   &:hover {border-color: var(--border-color-hover);}
   &:active {background-color: var(--button-active-bg);}
   &:focus {outline: none;}
-  > .icon {width: 1em;height: 1em;order: 1;margin-right: 0.5em;margin-left: 0;}
+  > .icon {order: 1;margin-right: 0.5em;margin-left: 0;}
   > .content {order: 2}
   &.icon-right {
-    > .icon {order: 2;margin-right: 0em;margin-left: 0.5em;}
+    > .icon {order: 2;margin-right: 0;margin-left: 0.5em;}
     > .content {order: 1;} }
 }
 </style>
