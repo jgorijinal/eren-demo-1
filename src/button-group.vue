@@ -5,7 +5,14 @@
 </template>
 <script>
 export default {
-
+mounted(){
+  for (let node of this.$el.children){
+    let name = node.nodeName.toLowerCase()
+    if(name !== 'button'){
+      console.warn(`g-button-group的子元素必须是g-button,但是你写的是${name}`)
+    }
+  }
+}
 }
 </script>
 <style lang="scss">
@@ -28,7 +35,5 @@ export default {
       z-index:1
     }
   }
-
-
 }
 </style>
