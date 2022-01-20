@@ -1,11 +1,16 @@
 <template>
   <svg class="icon" aria-hidden="true">
-    <use :xlink:href="`#icon-${name}`" ></use>
+    <use :xlink:href="`#icon-${name}`"></use>
   </svg>
 </template>
 <script>
 export default{
-  props:['name']
+  props:{
+    name:{
+      type:String
+    },
+
+  }
 }
 </script>
 <style lang="scss">

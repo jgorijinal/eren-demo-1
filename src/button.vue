@@ -1,6 +1,7 @@
 <template>
-    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
-      <g-icon v-if="icon" class="icon" :name="icon" ></g-icon>
+    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click',!loading)">
+      <g-icon v-if="loading" class="loading" name="loading"></g-icon>
+      <g-icon v-if="icon && !loading" class="icon" :name="icon"></g-icon>
       <div class="content">
         <slot/>
       </div>
@@ -17,6 +18,10 @@ export default {
       validator(value) {
      return value === 'left' || value === 'right'
       }
+    },
+    loading:{
+      type:Boolean,
+      default: false
     }
   },
 
@@ -35,5 +40,12 @@ export default {
   &.icon-right {
     > .icon {order: 2;margin-right: 0;margin-left: 0.5em;}
     > .content {order: 1;} }
+  .loading{
+    animation: spin 2s infinite linear;
+  }
+  @keyframes spin {
+    0% {transform: rotate(0)}
+    100% {transform: rotate(360deg)}
+  }
 }
 </style>
