@@ -28,7 +28,7 @@
 </head>
 <body>
 <div id="app">
-    <g-button :loading.sync="loading1" >文字</g-button>
+    <g-button :loading="loading1"  @click="loading1 = !loading1">文字</g-button>
     <g-button icon="down" :loading="true">文字</g-button>
     <g-button icon="settings">文字</g-button>
     <g-button icon="right">文字</g-button>
